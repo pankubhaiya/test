@@ -1,3 +1,71 @@
-<h1>Problem statement: 1<h1>
 
-<router-outlet><router-outlet />
+
+<div class="container">
+    <div class="inputData">
+    
+    <h1>Add User From Here</h1>
+    <form (ngSubmit) = "onSubmit(newUser)">
+    
+    
+      <div class="formComp">
+      <label for="userName">Enter User Name :</label>
+      <input type="text" class="formData" id="userName" [(ngModel)]="newUser.userName" name="userName">
+    </div>
+    
+    
+    <div class="formComp">
+      <label for="designation">Enter User Designation :</label>
+      <input type="text" class="formData" id="designation" [(ngModel)]="newUser.designation" name="designation">
+    </div>
+    
+    
+    <div class="formComp">
+      <label for="salary">Enter User salary :</label>
+      <input type="text" class="formData" id="salary" name="salary" [(ngModel)]="newUser.salary">
+    </div>
+    
+    <!-- button to submit Data -->
+    <button type="submit" class="submitBtn"> Add User</button>
+    
+    
+    </form>
+    
+    
+    </div>
+    
+    
+    
+    <!-- Below are the elements to load data into ui -->
+    <!-- showing data as Table -->
+    <div class="tableData">
+      <h2>☻ USERS ☻</h2>
+    
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+    
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.userName}}</td>
+            <td>{{user.designation}}</td>
+            <td>{{user.salary}}</td>
+            <td><button>Delete</button></td>
+            <td><button>Update Data</button></td>
+    
+          </tr>
+        </tbody>
+      </table>
+    
+    
+    
+    </div>
+    
+    
+    
+    </div>
