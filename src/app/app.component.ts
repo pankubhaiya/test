@@ -25,20 +25,17 @@ export class AppComponent {
   ngOnInit() {
     this.fetchUsers();
   }
-  // users : User[] = [];
-
+ 
   onSubmit(newUser: any) {
     this.users.push({ ...this.newUser });
     this.http
       .post('https://masaieval-default-rtdb.firebaseio.com/users.json', newUser)
       .subscribe((res) => {
         console.log(res, 'POST API');
-        //to make the form empty after submitting the data
         this.newUser = { userName: '', designation: '', salary: 0 };
       });
   }
 
-  //fetching data realtime...>>>>
 
   fetchUsers() {
     this.http
