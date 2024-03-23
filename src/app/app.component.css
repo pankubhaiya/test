@@ -84,6 +84,7 @@
     border: none;
   }
   
+  
   .buttonContainer button.deleteBtn:hover {
     background-color: #d32f2f;
   }
